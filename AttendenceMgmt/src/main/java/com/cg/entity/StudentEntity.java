@@ -47,4 +47,99 @@ public class StudentEntity{
 	@Column(name = "father_mob_no")
 	private String fatherMobileNo;
 		
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public long getRollNo() {
+		return rollNo;
+	}
+
+	public void setRollNo(long rollNo) {
+		this.rollNo = rollNo;
+	}
+
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+	public String getMobileNo() {
+		return mobileNo;
+	}
+
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+
+	public long getCourseId() {
+		return courseId;
+	}
+
+	public void setCourseId(long courseId) {
+		this.courseId = courseId;
+	}
+
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public long getSubjectId() {
+		return subjectId;
+	}
+
+	public void setSubjectId(long subjectId) {
+		this.subjectId = subjectId;
+	}
+
+	public String getSubjectName() {
+		return subjectName;
+	}
+
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getFatherEmailId() {
+		return fatherEmailId;
+	}
+
+	public void setFatherEmailId(String fatherEmailId) {
+		this.fatherEmailId = fatherEmailId;
+	}
+
+	public String getFatherMobileNo() {
+		return fatherMobileNo;
+	}
+
+	public void setFatherMobileNo(String fatherMobileNo) {
+		this.fatherMobileNo = fatherMobileNo;
+	}
+
+	@Override
+	public String toString() {
+	return "";
+	}
+
+	
 }

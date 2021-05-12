@@ -24,5 +24,38 @@ public class AttendanceEntity{
 	
 	@Column(name="date")
 	private Date date;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public long getSubjectId() {
+		return subjectId;
+	}
+
+	public void setSubjectId(long subjectId) {
+		this.subjectId = subjectId;
+	}
+
+	public long getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(long studentId) {
+		this.studentId = studentId;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
 	
 }
