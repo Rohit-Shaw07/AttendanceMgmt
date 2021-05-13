@@ -3,6 +3,7 @@ package com.cg.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -54,7 +55,6 @@ public class AssignFaculty{
 	public void setSubjectId(long subjectId) {
 		this.subjectId = subjectId;
 	}
-	
 	
 
 }
