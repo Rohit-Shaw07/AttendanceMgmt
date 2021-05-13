@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cg_attendence")
-public class AttendanceEntity{
+public class Attendance{
 	
 	@Id
 	@Column(name="attn_id")

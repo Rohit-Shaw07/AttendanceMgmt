@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cg_subject")
-public class SubjectEntity{
+public class Subject{
 	
 	@Id
 	@Column(name = "student_id")
