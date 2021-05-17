@@ -4,25 +4,44 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "cg_assignfaculty")
 public class AssignFaculty{
 	
-	
-	@Column(name="role_id")
+	@Id
+	@Column(name="assign_faculty_id")
 	private long id;
 	
-	@Id
-	@Column(name="asfac_id")
-	private long userId;
+	@ManyToOne
+	@JoinColumn(name="faculty_id",referencedColumnName = "faculty_id")
+	private Faculty faculty; 
 	
-	@Column(name="course_id")
-	private long courseId;
+	@ManyToOne
+	@JoinColumn(name="subject_id",referencedColumnName = "subject_id")
+	private Subject subject;
 	
-	@Column(name="subject_id")
-	private long subjectId;
+	@Column(name="batch_name")
+	private String batchName;
+	
+	public Faculty getFaculty() {
+		return faculty;
+	}
+
+	public void setFaculty(Faculty faculty) {
+		this.faculty = faculty;
+	}
+
+	public Subject getSubject() {
+		return subject;
+	}
+
+	public void setSubject(Subject subject) {
+		this.subject = subject;
+	}
 
 	public long getId() {
 		return id;
@@ -30,31 +49,6 @@ public class AssignFaculty{
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(long userId) {
-		this.userId = userId;
-	}
-
-	public long getCourseId() {
-		return courseId;
-	}
-
-	public void setCourseId(long courseId) {
-		this.courseId = courseId;
-	}
-
-	public long getSubjectId() {
-		return subjectId;
-	}
-
-	public void setSubjectId(long subjectId) {
-		this.subjectId = subjectId;
-	}
+	}	
 	
-
 }

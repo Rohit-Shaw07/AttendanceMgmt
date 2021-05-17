@@ -1,10 +1,12 @@
 package com.cg.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -16,15 +18,21 @@ public class Attendance{
 	@Column(name="attn_id")
 	private long id;
 	
-	@Column(name="subject_id")
-	private long subjectId;
-	
-	@Column(name="student_id")
-	private long studentId;
-	
 	@Column(name="date")
-	private Date date;
-
+	private LocalDate date;
+	
+	@ManyToOne
+	@JoinColumn(name="student_id",referencedColumnName = "student_id")
+	private Student student;
+	
+	@ManyToOne
+	@JoinColumn(name="subject_id",referencedColumnName = "subject_id")
+	private Subject subject;
+	
+	@ManyToOne
+	@JoinColumn(name="faculty_id",referencedColumnName = "faculty_id")
+	private Faculty faculty;
+	
 	public long getId() {
 		return id;
 	}
@@ -33,29 +41,37 @@ public class Attendance{
 		this.id = id;
 	}
 
-	public long getSubjectId() {
-		return subjectId;
-	}
-
-	public void setSubjectId(long subjectId) {
-		this.subjectId = subjectId;
-	}
-
-	public long getStudentId() {
-		return studentId;
-	}
-
-	public void setStudentId(long studentId) {
-		this.studentId = studentId;
-	}
-
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public Subject getSubject() {
+		return subject;
+	}
+
+	public void setSubject(Subject subject) {
+		this.subject = subject;
+	}
+
+	public Faculty getFaculty() {
+		return faculty;
+	}
+
+	public void setFaculty(Faculty faculty) {
+		this.faculty = faculty;
+	}	
 	
 	
 }

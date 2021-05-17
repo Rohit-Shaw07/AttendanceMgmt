@@ -17,17 +17,20 @@ public class Student{
 	@Column(name = "student_id")
 	private long id;
 	
-	@Column(name = "roll_no")
-	private long rollNo;
+	@Column(name="batch_name")
+	private String batchNname;
+	
+	@Column(name="user_fname")
+	private String firstName;
+	
+	@Column(name="user_lname")
+	private String lastName;
 	
 	@Column(name = "student_dob")
 	private Date dob;
 	
 	@Column(name = "mob_no")
 	private String mobileNo;
-	
-	@Column(name = "course_id")
-	private long courseId;
 	
 	@Column(name = "course_name")
 	private String courseName;
@@ -37,6 +40,7 @@ public class Student{
 	
 	@Column(name = "subject_name")
 	private String subjectName;
+	
 	
 	@Column(name = "email_id")
 	private String emailId;
@@ -56,13 +60,6 @@ public class Student{
 		this.id = id;
 	}
 
-	public long getRollNo() {
-		return rollNo;
-	}
-
-	public void setRollNo(long rollNo) {
-		this.rollNo = rollNo;
-	}
 
 	public Date getDob() {
 		return dob;
@@ -78,14 +75,6 @@ public class Student{
 
 	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
-	}
-
-	public long getCourseId() {
-		return courseId;
-	}
-
-	public void setCourseId(long courseId) {
-		this.courseId = courseId;
 	}
 
 	public String getCourseName() {

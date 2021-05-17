@@ -9,10 +9,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cg_user")
-public class User {
+public class Faculty {
 	
 	@Id
-	@Column(name="user_id")
+	@Column(name="faculty_id")
 	private String id;
 	
 	@Column(name="user_fname")
