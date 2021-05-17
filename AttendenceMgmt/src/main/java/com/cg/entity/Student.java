@@ -32,7 +32,6 @@ public class Student{
 	@Column(name = "mob_no")
 	private String mobileNo;
 	
-	
 	@Column(name = "email_id")
 	private String emailId;
 	

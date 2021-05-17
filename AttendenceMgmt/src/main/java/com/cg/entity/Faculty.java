@@ -13,10 +13,10 @@ public class Faculty {
 	@Column(name="faculty_id")
 	private String id;
 	
-	@Column(name="user_fname")
+	@Column(name="faculty_fname")
 	private String firstName;
 	
-	@Column(name="user_lname")
+	@Column(name="faculty_lname")
 	private String lastName;
 	
 	@Column(name="user_phno")
