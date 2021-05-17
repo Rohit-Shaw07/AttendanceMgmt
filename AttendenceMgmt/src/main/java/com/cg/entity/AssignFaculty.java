@@ -47,6 +47,14 @@ public class AssignFaculty{
 		return id;
 	}
 
+	public String getBatchName() {
+		return batchName;
+	}
+
+	public void setBatchName(String batchName) {
+		this.batchName = batchName;
+	}
+
 	public void setId(long id) {
 		this.id = id;
 	}	

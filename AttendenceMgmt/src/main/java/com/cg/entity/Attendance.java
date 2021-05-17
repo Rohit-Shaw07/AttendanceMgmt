@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Attendance{
 	
 	@Id
-	@Column(name="attn_id")
+	@Column(name="attendance_id")
 	private long id;
 	
 	@Column(name="date")

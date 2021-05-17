@@ -1,6 +1,6 @@
 package com.cg.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,19 +27,10 @@ public class Student{
 	private String lastName;
 	
 	@Column(name = "student_dob")
-	private Date dob;
+	private LocalDate dob;
 	
 	@Column(name = "mob_no")
 	private String mobileNo;
-	
-	@Column(name = "course_name")
-	private String courseName;
-	
-	@Column(name = "subject_id")
-	private long subjectId;
-	
-	@Column(name = "subject_name")
-	private String subjectName;
 	
 	
 	@Column(name = "email_id")
@@ -60,45 +51,12 @@ public class Student{
 		this.id = id;
 	}
 
-
-	public Date getDob() {
-		return dob;
-	}
-
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
-
 	public String getMobileNo() {
 		return mobileNo;
 	}
 
 	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
-	}
-
-	public String getCourseName() {
-		return courseName;
-	}
-
-	public void setCourseName(String courseName) {
-		this.courseName = courseName;
-	}
-
-	public long getSubjectId() {
-		return subjectId;
-	}
-
-	public void setSubjectId(long subjectId) {
-		this.subjectId = subjectId;
-	}
-
-	public String getSubjectName() {
-		return subjectName;
-	}
-
-	public void setSubjectName(String subjectName) {
-		this.subjectName = subjectName;
 	}
 
 	public String getEmailId() {
