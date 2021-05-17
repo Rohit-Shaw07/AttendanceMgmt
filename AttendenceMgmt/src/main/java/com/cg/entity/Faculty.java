@@ -19,7 +19,7 @@ public class Faculty {
 	@Column(name="faculty_lname")
 	private String lastName;
 	
-	@Column(name="user_phno")
+	@Column(name="user_mobile_no")
 	private String mobileNo;
 	
 	@Column(name="user_gen")
