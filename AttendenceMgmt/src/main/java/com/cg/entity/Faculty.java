@@ -2,14 +2,19 @@ package com.cg.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "cg_faculy")
+@Table(name = "cg_faculty")
 public class Faculty {
 	
 	@Id
+	@SequenceGenerator(name="seq1",sequenceName = "faculty_seq1",allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq1")
 	@Column(name="faculty_id")
 	private String id;
 	
@@ -19,13 +24,13 @@ public class Faculty {
 	@Column(name="faculty_lname")
 	private String lastName;
 	
-	@Column(name="user_mobile_no")
+	@Column(name="faculty_mobile_no")
 	private String mobileNo;
 	
-	@Column(name="user_gen")
+	@Column(name="faculty_gender")
 	private String gender;
 	
-	@Column(name="user_propic")
+	@Column(name="faculty_propic")
 	private String profilePic;
 
 	public String getId() {

@@ -4,7 +4,10 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
@@ -14,17 +17,16 @@ public class Student{
 	
 
 	@Id
+	@SequenceGenerator(name="seq1",sequenceName = "student_seq1",allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq1")
 	@Column(name = "student_id")
 	private long id;
 	
-	@Column(name="batch_name")
-	private String batchNname;
-	
-	@Column(name="user_fname")
+	/*@Column(name="student_fname")
 	private String firstName;
 	
-	@Column(name="user_lname")
-	private String lastName;
+	@Column(name="student_lname")
+	private String lastName;*/
 	
 	@Column(name = "student_dob")
 	private LocalDate dob;
@@ -56,6 +58,14 @@ public class Student{
 
 	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
+	}
+	
+	public LocalDate getDob() {
+		return dob;
+	}
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
 	}
 
 	public String getEmailId() {

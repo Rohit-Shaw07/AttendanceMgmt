@@ -2,9 +2,12 @@ package com.cg.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
@@ -12,7 +15,10 @@ import javax.persistence.Table;
 @Table(name = "cg_assignfaculty")
 public class AssignFaculty{
 	
+	
 	@Id
+	@SequenceGenerator(name="seq1",sequenceName = "assign_faculty_seq1",allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq1")
 	@Column(name="assign_faculty_id")
 	private long id;
 	
@@ -47,6 +53,10 @@ public class AssignFaculty{
 		return id;
 	}
 
+	public void setId(long id) {
+		this.id = id;
+	}
+	
 	public String getBatchName() {
 		return batchName;
 	}
@@ -54,9 +64,5 @@ public class AssignFaculty{
 	public void setBatchName(String batchName) {
 		this.batchName = batchName;
 	}
-
-	public void setId(long id) {
-		this.id = id;
-	}	
 	
 }
