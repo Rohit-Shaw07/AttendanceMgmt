@@ -22,11 +22,11 @@ public class Student{
 	@Column(name = "student_id")
 	private long id;
 	
-	/*@Column(name="student_fname")
+	@Column(name="student_fname")
 	private String firstName;
 	
 	@Column(name="student_lname")
-	private String lastName;*/
+	private String lastName;
 	
 	@Column(name = "student_dob")
 	private LocalDate dob;
@@ -37,11 +37,35 @@ public class Student{
 	@Column(name = "email_id")
 	private String emailId;
 	
-	@Column(name = "father_email_id")
-	private String fatherEmailId;
+	@Column(name = "batch_id")
+	private String batchId;
 	
 	@Column(name = "father_mob_no")
 	private String fatherMobileNo;
+	
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getBatchId() {
+		return batchId;
+	}
+
+	public void setBatchId(String batchId) {
+		this.batchId = batchId;
+	}
 		
 	
 	public long getId() {
@@ -74,14 +98,6 @@ public class Student{
 
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
-	}
-
-	public String getFatherEmailId() {
-		return fatherEmailId;
-	}
-
-	public void setFatherEmailId(String fatherEmailId) {
-		this.fatherEmailId = fatherEmailId;
 	}
 
 	public String getFatherMobileNo() {

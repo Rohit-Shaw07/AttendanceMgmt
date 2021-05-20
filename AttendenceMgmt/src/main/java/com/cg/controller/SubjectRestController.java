@@ -30,7 +30,7 @@ public class SubjectRestController {
 		if(br.hasErrors())
 			throw new ValidateException(br.getFieldErrors());
 		Subject obj= subjectservice.addSubject(subjectdto);
-		return new SuccessMessage(SubjectConstants.SUBJECT_ADDED + obj.getId());
+		return new SuccessMessage(SubjectConstants.SUBJECT_ADDED + obj.getSubjectid());
 		}
 	
 	@GetMapping("viewsubject/{subjectid}")

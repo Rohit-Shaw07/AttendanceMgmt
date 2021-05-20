@@ -17,20 +17,22 @@ public class Subject{
 	@SequenceGenerator(name="seq1",sequenceName = "subject_seq1",allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq1")
 	@Column(name = "subject_id")
-	private Long id;
+	private long subjectid;
 	
 	@Column(name = "subject_code")
 	private String subjectCode;
 	
-	@Column(name = "desc")
+	@Column(name = "description")
 	private String description;
 
-	public long getId() {
-		return id;
+	
+
+	public long getSubjectid() {
+		return subjectid;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setSubjectid(long subjectid) {
+		this.subjectid = subjectid;
 	}
 
 	public String getSubjectCode() {
@@ -49,9 +51,6 @@ public class Subject{
 		this.description = description;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
 	
 	
 }

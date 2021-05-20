@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import com.cg.dto.ErrorMessage;
+import com.cg.exception.AttendenceException;
+import com.cg.exception.FacultyNotFoundException;
 import com.cg.exception.SubjectNotFoundException;
 import com.cg.exception.ValidateException;
 import com.cg.util.SubjectConstants;
@@ -44,5 +46,17 @@ public class SubjectAdvice {
 	public ErrorMessage handleSubjectNotFound(SubjectNotFoundException ex) {
 		return new ErrorMessage(HttpStatus.BAD_REQUEST.toString(), ex.getMessage());
 	}
-
+	
+	@ExceptionHandler(FacultyNotFoundException.class)
+	@ResponseStatus(code = HttpStatus.BAD_REQUEST)
+	public ErrorMessage handleFacultyNotFound(FacultyNotFoundException ex) {
+		return new ErrorMessage(HttpStatus.BAD_REQUEST.toString(), ex.getMessage());
+	}
+	
+	@ExceptionHandler(AttendenceException.class)
+	@ResponseStatus(code = HttpStatus.BAD_REQUEST)
+	public ErrorMessage handleAttendenceNotFound(AttendenceException ex) {
+		return new ErrorMessage(HttpStatus.BAD_REQUEST.toString(), ex.getMessage());
+	}
+	
 }

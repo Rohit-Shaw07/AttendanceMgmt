@@ -16,7 +16,7 @@ public class Faculty {
 	@SequenceGenerator(name="seq1",sequenceName = "faculty_seq1",allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq1")
 	@Column(name="faculty_id")
-	private String id;
+	private long facultyid;
 	
 	@Column(name="faculty_fname")
 	private String firstName;
@@ -33,12 +33,14 @@ public class Faculty {
 	@Column(name="faculty_propic")
 	private String profilePic;
 
-	public String getId() {
-		return id;
+	
+
+	public long getFacultyid() {
+		return facultyid;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setFacultyid(long facultyid) {
+		this.facultyid = facultyid;
 	}
 
 	public String getFirstName() {

@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cg.dao.ISubjectDao;
 import com.cg.dto.SubjectDto;
@@ -14,6 +15,7 @@ import com.cg.exception.SubjectNotFoundException;
 import com.cg.util.SubjectConstants;
 
 
+@Service
 public class ISubjectServiceImpl implements ISubjectService {
 	
 	@Autowired

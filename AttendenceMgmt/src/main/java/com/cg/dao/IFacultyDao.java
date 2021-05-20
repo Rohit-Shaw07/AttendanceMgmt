@@ -3,12 +3,9 @@ package com.cg.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cg.entity.Subject;
+import com.cg.entity.Faculty;
 
 @Repository
-public interface ISubjectDao extends JpaRepository<Subject,Long>{
+public interface IFacultyDao extends JpaRepository<Faculty, Long>{
 	
-	
-
-
 }

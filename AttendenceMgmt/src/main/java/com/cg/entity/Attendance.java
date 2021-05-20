@@ -23,8 +23,8 @@ public class Attendance{
 	@Column(name="attendance_id")
 	private long id;
 	
-	@Column(name="date")
-	private LocalDate date;
+	@Column(name="attendence_date")
+	private LocalDate attendencedate;
 	
 	@ManyToOne
 	@JoinColumn(name="student_id",referencedColumnName = "student_id")
@@ -38,6 +38,18 @@ public class Attendance{
 	@JoinColumn(name="faculty_id",referencedColumnName = "faculty_id")
 	private Faculty faculty;
 	
+	@Column(name="att_status")
+	private String status;
+	
+	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -46,12 +58,14 @@ public class Attendance{
 		this.id = id;
 	}
 
-	public LocalDate getDate() {
-		return date;
+	
+
+	public LocalDate getAttendencedate() {
+		return attendencedate;
 	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setAttendencedate(LocalDate attendencedate) {
+		this.attendencedate = attendencedate;
 	}
 
 	public Student getStudent() {
