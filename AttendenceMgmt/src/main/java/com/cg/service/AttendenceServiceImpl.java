@@ -9,17 +9,20 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.dao.IAssignFacultyDao;
 import com.cg.dao.IAttendenceDao;
 import com.cg.dao.IFacultyDao;
 import com.cg.dao.IStudentDao;
 import com.cg.dao.ISubjectDao;
 import com.cg.dto.AttendenceDto;
 import com.cg.dto.AttendenceResponseDto;
+import com.cg.entity.AssignFaculty;
 import com.cg.entity.Attendance;
 import com.cg.entity.Faculty;
 import com.cg.entity.Student;
 import com.cg.entity.Subject;
 import com.cg.exception.AttendenceException;
+import com.cg.exception.BatchNotFoundException;
 import com.cg.exception.FacultyNotFoundException;
 import com.cg.exception.StudentNotFoundException;
 import com.cg.exception.SubjectNotFoundException;
@@ -37,7 +40,8 @@ public class AttendenceServiceImpl implements IAttendenceService{
 	private ISubjectDao subjectdao;
 	@Autowired
 	private IAttendenceDao attendencedao;
-	
+	@Autowired
+	private IAssignFacultyDao assignfacultydao;
 	
 
 	@Override
@@ -105,10 +109,13 @@ public class AttendenceServiceImpl implements IAttendenceService{
 		dto.setFacultyname(lst.get(SubjectConstants.FIRST_INDEX).getFaculty().getFirstName());
 		return dto;
 	}
-	
-	
-	
-	
-	
+
+
+
+	@Override
+	public List<AssignFaculty> findStudentByBatch(String batchname) throws BatchNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

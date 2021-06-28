@@ -59,4 +59,14 @@ public class StudentServiceImpl implements IStudentService{
 		return null;
 	}
 
+	@Override
+	public List<Student> viewAllStudent() throws StudentNotFoundException {
+		List<Student> lst= istudentdao.findAll();
+		if(lst.isEmpty()) {
+			throw new StudentNotFoundException(SubjectConstants.STUDENT_NOT_FOUND);
+		}
+		lst.sort((e1,e2)->e1.getFirstName().compareTo(e2.getFirstName()));
+		return lst;
+		
+	}
 }

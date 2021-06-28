@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,7 @@ import com.cg.dto.AttendenceResponseDto;
 import com.cg.dto.SuccessMessage;
 import com.cg.entity.Attendance;
 import com.cg.exception.AttendenceException;
+import com.cg.exception.BatchNotFoundException;
 import com.cg.exception.FacultyNotFoundException;
 import com.cg.exception.StudentNotFoundException;
 import com.cg.exception.SubjectNotFoundException;
@@ -27,6 +29,7 @@ import com.cg.service.AttendenceServiceImpl;
 import com.cg.service.IAttendenceService;
 import com.cg.util.SubjectConstants;
 
+@CrossOrigin()
 @RestController
 public class AttendenceRestController {
 	

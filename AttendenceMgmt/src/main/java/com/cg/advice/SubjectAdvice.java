@@ -13,6 +13,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import com.cg.dto.ErrorMessage;
 import com.cg.exception.AttendenceException;
 import com.cg.exception.FacultyNotFoundException;
+import com.cg.exception.StudentNotFoundException;
 import com.cg.exception.SubjectNotFoundException;
 import com.cg.exception.ValidateException;
 import com.cg.util.SubjectConstants;
@@ -46,6 +47,12 @@ public class SubjectAdvice {
 	public ErrorMessage handleSubjectNotFound(SubjectNotFoundException ex) {
 		return new ErrorMessage(HttpStatus.BAD_REQUEST.toString(), ex.getMessage());
 	}
+	@ExceptionHandler(StudentNotFoundException.class)
+	@ResponseStatus(code = HttpStatus.NOT_FOUND)
+	public ErrorMessage handleStudentNotFound(StudentNotFoundException ex) {
+		return new ErrorMessage(HttpStatus.NOT_FOUND.toString(), ex.getMessage());
+	}
+	
 	
 	@ExceptionHandler(FacultyNotFoundException.class)
 	@ResponseStatus(code = HttpStatus.BAD_REQUEST)

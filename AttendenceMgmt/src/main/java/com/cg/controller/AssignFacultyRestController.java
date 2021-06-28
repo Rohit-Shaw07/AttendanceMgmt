@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +24,7 @@ import com.cg.exception.ValidateException;
 import com.cg.service.IAssignFacultyService;
 import com.cg.util.SubjectConstants;
 
+@CrossOrigin()
 @RestController
 public class AssignFacultyRestController {
 	@Autowired
@@ -46,4 +48,10 @@ public class AssignFacultyRestController {
 	public List<AssignFaculty> getFacultyByBatchName(@PathVariable ("batchname") String batchname) throws FacultyNotFoundException{
 		return iassignfacultyservice.findFacultyByBatch(batchname);
 	}
+
+	@GetMapping("getallbatch")
+	public List<String> getBatchNames() throws FacultyNotFoundException{
+		return iassignfacultyservice.getBatchNames();
+	}
+	
 }

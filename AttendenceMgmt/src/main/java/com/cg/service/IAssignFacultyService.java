@@ -11,4 +11,5 @@ public interface IAssignFacultyService {
 	public AssignFaculty assignFaculty(AssignFacultyDto assignfacultydto) throws SubjectNotFoundException,FacultyNotFoundException;
 	public List<AssignFaculty> findFacultyForSubject(long subjectid)throws SubjectNotFoundException,FacultyNotFoundException;
 	public List<AssignFaculty> findFacultyByBatch(String batchname)throws FacultyNotFoundException;
+	public List<String> getBatchNames() throws FacultyNotFoundException;
 }

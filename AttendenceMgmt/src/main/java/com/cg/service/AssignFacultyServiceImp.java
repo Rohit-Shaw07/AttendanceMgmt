@@ -2,6 +2,7 @@ package com.cg.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -67,6 +68,15 @@ public class AssignFacultyServiceImp implements IAssignFacultyService{
 			throw new FacultyNotFoundException(SubjectConstants.FACULTY_NOT_FOUND);
 		lst.sort((e1,e2)->e1.getFaculty().getFirstName().compareTo(e2.getFaculty().getFirstName()));
 		return lst;
+	}
+	@Override
+	public List<String> getBatchNames() throws FacultyNotFoundException {
+		
+		List<AssignFaculty> lst= iassignfacultydao.findAll();
+		if(lst.isEmpty())
+			throw new FacultyNotFoundException(SubjectConstants.FACULTY_NOT_FOUND);
+		List <String> batchlist= lst.stream().map(e->e.getBatchName()).distinct().collect(Collectors.toList());
+		return batchlist;
 	}
 
 }
